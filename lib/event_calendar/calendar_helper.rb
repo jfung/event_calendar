@@ -185,7 +185,7 @@ module EventCalendar
           cal << %(ec-weekend-day-header) if weekend?(day)
           cal << %(" style="height: #{options[:day_nums_height]}px;">)
           if options[:link_to_day_action]
-            cal << day_link(day.day, day, options[:link_to_day_action])
+            cal << day_link(day.day, day, options[:employee_id])
           else
             cal << %(#{day.day})
           end
@@ -289,10 +289,10 @@ module EventCalendar
     end
 
     # override this in your own helper for greater control
-    def day_link(text, date, day_action)
+    def day_link(text, date, employee_id)
     #link_to(text, url_for(params.merge(:action => day_action, :year => date.year, :month => date.month, :day => date.day)), :class => 'ec-day-link')
 
-    facebox_link_to(text, :url => url_for(params.merge(:action => day_action, :year => date.year, :month => date.month, :day => date.day)), :class => 'ec-day-link')
+    facebox_link_to(text, :url => employee_calendar_new_path(:employee_id => employee_id, :year => date.year, :month => date.month, :day => date.day), :class => 'ec-day-link')
 
     end
 
