@@ -292,7 +292,7 @@ module EventCalendar
     def day_link(text, date, day_action)
     #link_to(text, url_for(params.merge(:action => day_action, :year => date.year, :month => date.month, :day => date.day)), :class => 'ec-day-link')
 
-    facebox_link_to(text, url_for(params.merge(:action => day_action, :year => date.year, :month => date.month, :day => date.day)), :class => 'ec-day-link')
+    facebox_link_to(text, :url => url_for(params.merge(:action => day_action, :year => date.year, :month => date.month, :day => date.day)), :class => 'ec-day-link')
 
     end
 
