@@ -292,7 +292,7 @@ module EventCalendar
     def day_link(text, date, employee_id)
     #link_to(text, employee_calendar_new_path(:employee_id => employee_id, :year => date.year, :month => date.month, :day => date.day), :class => 'ec-day-link')
 
-    facebox_link_to(text, {:url => employee_calendar_new_path(:employee_id => employee_id, :year => date.year, :month => date.month, :day => date.day) }, {:class => 'ec-day-link'})
+    facebox_link_to(text, {:url => employee_event_new_path(:employee_id => employee_id, :year => date.year, :month => date.month, :day => date.day) }, {:class => 'ec-day-link'})
 
     end
 
